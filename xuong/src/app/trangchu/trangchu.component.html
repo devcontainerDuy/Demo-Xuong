@@ -1,0 +1,127 @@
+<div class="container mt-3">
+    <!-- Tour hot -->
+    <div class="row d-flex justify-content-between mx-1 ">
+        <div class=" p-1 w-auto">
+            <h4 class="text-success"> TOUR NỔI BẬT</h4>
+        </div>
+        <select ng-model="sort" class="form-select w-auto" aria-label="Default select
+            example" [(ngModel)]=" selectedSort" (change)="onSortChange()">
+            <option selected>Sắp xếp</option>
+            <option value="asc">Giá tăng dần</option>
+            <option value="desc">Giá giảm dần</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-3 my-3" *ngFor="let p of productsHot">
+            <div class="card shadow position-relative">
+                <img class src="assets/img/{{p.image}}.jpeg" height="200px" class="card-img-top" alt="..." />
+                <div class="rounded-start-pill bg-danger text-white px-4 py-1 position-absolute end-0">
+                    Giá sốc
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-success">{{p.name}}</h5>
+                    <p class="text-danger m-0"><b>Giá: {{p.sale | number}} đ</b></p>
+                    <p class><del>Giá: {{p.price | number}} đ</del></p>
+                    <p>
+                        <i class="bi bi-alarm"></i> Thời gian:
+                        {{p.duration}}
+                        <br />
+                        <i class="bi bi-airplane"></i> Phương tiện:
+                        {{p.transport}}<br />
+                        <i class="bi bi-house"></i> Khách sạn:
+                        {{p.hotel}} <i class="text-warning bi bi-star-fill"></i>
+                        <br>
+                        <i class="bi bi-calendar-date"></i> Ngày đi:
+                        {{p.start}}
+                    </p>
+                    <div class="text-center">
+                        <a class="btn btn-warning text-white" [routerLink]="['/chitietsanpham', p.id]">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Banner quảng cáo -->
+    <img class="img-fluid my-2" src="https://www.tuannguyentravel.com/data/sl/tour-phu-quoc-2022.jpg" alt />
+    <!-- Tour trong nước -->
+    <div class="row d-flex justify-content-between mx-1 ">
+        <div class=" p-1 w-auto">
+            <h4 class="text-success"> TOUR TRONG NƯỚC</h4>
+        </div>
+        <select ng-model="sort" class="form-select w-auto" aria-label="Default select
+            example" [(ngModel)]="selectedSort" (change)="onSortChange()">
+            <option value="asc">Giá tăng dần</option>
+            <option value="desc">Giá giảm dần</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-3 my-3" *ngFor="let p of productsTrongNuoc | slice:0:4">
+            <div class="card shadow position-relative">
+                <img class src="assets/img/{{p.image}}.jpeg" height="200px" class="card-img-top" alt="..." />
+                <div class="rounded-start-pill bg-danger text-white px-4 py-1 position-absolute end-0">
+                    Giá sốc
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-success">{{p.name}}</h5>
+                    <p class="text-danger m-0"><b>Giá: {{p.sale | number}} đ</b></p>
+                    <p class><del>Giá: {{p.price | number}} đ</del></p>
+                    <p>
+                        <i class="bi bi-alarm"></i> Thời gian:
+                        {{p.duration}}
+                        <br />
+                        <i class="bi bi-airplane"></i> Phương tiện:
+                        {{p.transport}}<br />
+                        <i class="bi bi-house"></i> Khách sạn:
+                        {{p.hotel}} <i class="text-warning bi bi-star-fill"></i>
+                        <br>
+                        <i class="bi bi-calendar-date"></i> Ngày đi:
+                        {{p.start}}
+                    </p>
+                    <div class="text-center">
+                        <a class="btn btn-warning text-white" [routerLink]="['/chitietsanpham', p.id]">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Tour Quốc Tế -->
+    <div class="row d-flex justify-content-between mx-1 bg">
+        <div class=" p-1 w-auto">
+            <h4 class="text-success">TOUR QUỐC TẾ</h4>
+        </div>
+        <select ng-model="sort" class="form-select w-auto" aria-label="Default select
+            example" [(ngModel)]="selectedSort" (change)="onSortChange()">
+            <option value="asc">Giá tăng dần</option>
+            <option value="desc">Giá giảm dần</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-3 my-3" *ngFor="let p of productsQuocTe | slice:0:4">
+            <div class="card shadow position-relative">
+                <img class src="assets/img/{{p.image}}.jpeg" height="200px" class="card-img-top" alt="..." />
+                <div class="rounded-start-pill bg-danger text-white px-4 py-1 position-absolute end-0">
+                    Giá sốc
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-success">{{p.name}}</h5>
+                    <p class="text-danger m-0"><b>Giá: {{p.sale | number}} đ</b></p>
+                    <p class><del>Giá: {{p.price | number}} đ</del></p>
+                    <p>
+                        <i class="bi bi-alarm"></i> Thời gian:
+                        {{p.duration}}
+                        <br />
+                        <i class="bi bi-airplane"></i> Phương tiện:
+                        {{p.transport}}<br />
+                        <i class="bi bi-house"></i> Khách sạn:
+                        {{p.hotel}} <i class="text-warning bi bi-star-fill"></i>
+                        <br>
+                        <i class="bi bi-calendar-date"></i> Ngày đi:
+                        {{p.start}}
+                    </p>
+                    <div class="text-center">
+                        <a class="btn btn-warning text-white" [routerLink]="['/chitietsanpham', p.id]">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
